@@ -125,6 +125,11 @@ h1 span {
   border-radius: .25rem;
 }
 
+.square.hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
 .btn:hover {
   background-color: var(--lightBlue);
   border: 1px solid var(--lightBlue);

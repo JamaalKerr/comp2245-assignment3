@@ -22,5 +22,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 currentPlayer = currentPlayer === "X" ? "O" : "X";
             }
         });
+
+        square.addEventListener('mouseenter', function () {
+            square.classList.add('hover'); 
+        });
+
+        square.addEventListener('mouseleave', function () {
+            square.classList.remove('hover'); 
+        });
     });
 });
