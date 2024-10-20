@@ -1,9 +1,26 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Select all div elements inside the board
-    const squares = document.querySelectorAll('#board div');
 
-    // Add the class 'square' to each square
-    squares.forEach(square => {
+    const squares = document.querySelectorAll('#board div');
+    
+    let currentPlayer = "X";
+    
+    const gameState = Array(9).fill(null);  
+
+    squares.forEach((square, index) => {
         square.classList.add('square');
+        
+        square.addEventListener('click', function () {
+
+            if (square.textContent === "") {
+
+                square.textContent = currentPlayer;
+                
+                square.classList.add(currentPlayer);
+                
+                gameState[index] = currentPlayer;
+
+                currentPlayer = currentPlayer === "X" ? "O" : "X";
+            }
+        });
     });
 });
